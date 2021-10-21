@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<!-- Created By CodingLab - www.codinglabweb.com -->
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+    <!--<title> Responsive Sidebar Menu  | CodingLab </title>-->
+
+    <script src="./js/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="./Css/style.css">
+    <link rel="stylesheet" href="./Css/archivo.css">
+    <link rel="shortcut icon" type="image/ico" href="Img/Favi.ico"/>
+    <script src="./js/borrarcli.js"></script>
+  <script src="./js/actualizarcli.js"></script>
+    <!-- Boxicons CDN Link -->
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  </head>
+  <TItle>Empleado</TItle>
+<body>
+  <div class="sidebar">
+    <div class="logo_content">
+      <div class="logo">
+        <i class=''> <img src="./Css/la-red.png" alt="" height="50px" width="50px"></i>
+        <div class="logo_name"></div>
+      </div>
+      <div>
+        
+      </div>
+      <i class='bx bx-menu' id="btn" ></i>
+    </div>
+    <ul class="nav_list">
+      <li>
+          <i class='bx bx-search' ></i>
+          <input type="text" placeholder="Search...">
+        <span class="tooltip">Search</span>
+      </li>
+      <li>
+        <a href="/Empleado">
+          <i class='bx bx-grid-alt' ></i>
+          <span class="links_name">Inicio</span>
+        </a>
+        <span class="tooltip">Inicio</span>
+      </li>
+      <li>
+        <a href="/TbCliente">
+          <i class='bx bx-user' ></i>
+          <span class="links_name">Clientes</span>
+        </a>
+        <span class="tooltip">Clientes</span>
+      </li>
+      <li>
+        <a href="/GenerarLi">
+          <i class='bx bx-chat' ></i>
+          <span class="links_name">Generar Lineas
+            </span>
+        </a>
+        <span class="tooltip">Gnerar Lineas/span>
+        <li>
+          <a href="/GenerarCre">
+            <i class='bx bx-chat' ></i>
+            <span class="links_name">Generar Creditos</span>
+          </a>
+          <a href="/GenerarAhorro">
+            <i class='bx bx-chat' ></i>
+            <span class="links_name">Generar C. Ahorros
+
+            </span>
+          </a>
+          <span class="tooltip">Cuentas De Ahorro</span>
+          <a href="">
+            <i class='bx bx-chat' ></i>
+            <span class="links_name">Generar C. Corriente
+
+            </span>
+          </a>
+          <span class="tooltip">Cuentas Corriente</span>
+        </li>
+        
+    
+    <div class="profile_content">
+      <div class="profile">
+        <div class="profile_details">
+          <img src="profile.jpg" alt="">
+          <div class="name_job">
+            <div class="name">Prem Shahi</div>
+            <div class="job">Web Designer</div>
+          </div>
+        </div>
+        <i class='bx bx-log-out' id="log_out"> <a href="cerrar">Cerrar Sesion</a></i>
+      </div>
+    </div>
+  </div>
+  <div class="home_content">
+    <div class="text">BIENVENIDO ESTIMADO EMPLEADO</div>
+    <section class="form-register">
+      <h4>Formulario Registro Cliente</h4>
+      <form action="/frminsertar2" method="POST" autocomplete="off">
+      <input class="controls" type="text" name="doccli" id="Documento" placeholder="Ingrese su Documento">
+      <input class="controls" type="text" name="nomcli" id="Usuario" placeholder="Ingrese su Nombre">
+      <input class="controls" type="text" name="apecli" id="Apellido" placeholder="Ingrese su Apellido">
+      <input class="controls" type="email" name="correocli" id="Correo" placeholder="Ingrese su Correo">
+      <input class="controls" type="text" name="cel" id="Cel" placeholder="Ingrese su numero celular">
+      <select class="controls"  name="sexo">
+
+        <option>F</option>
+        
+        <option>M</option>
+        
+   
+        
+        </select>
+      <input class="controls" type="date" name="fecha" id="fecha" >
+      <input class="botons" type="submit" value="Registrar">
+    </form>
+    </section>
+    <div class="table_responsive">
+        <table>
+          <thead>
+            <tr>
+              <th>Documento</th>
+              <th>Usuario</th>
+              <th>Apellido</th>
+              <th>Correo</th>
+              <th>Numero</th>
+              <th>Sexo</th>
+              <th>Fecha</th>
+              <th>Accion</th>
+              <th>Accion</th>
+              <th>Lineas De Creditos</th>
+              <th>Creditos</th>
+
+
+            </tr>
+          </thead>
+      
+          <tbody>
+            <% Datos.forEach(function (Datos){ %> 
+            <tr>
+              <td>
+                <input type="text"  name="doccli" class="doc" placeholder="Documento Cliente" value="<%=Datos.doccli%>">
+              </td>
+              <td>
+                <input type="text" name="nomusu" class="cli" placeholder="Nombre Usuario" value="<%=Datos.nomcli%>">
+              </td>
+              <td>
+                <input type="text" name="clave" class="ape" placeholder="Documento Cliente" value="<%=Datos.aplicli%>">
+              </td>
+              <td>
+                <input type="text" name="rol" class="correo" placeholder="Documento Cliente" value="<%=Datos.correocli%>">
+              </td>
+              <td>
+                <input type="text" name="estado" class="celular" placeholder="Documento Cliente" value="<%=Datos.celular%>">
+              </td>
+           <td>
+                <input type="text" name="imagen" class="sexo" placeholder="Documento Cliente" value="<%=Datos.sexo%>">
+              </td>
+              <td>
+                  <input type="text" name="imagen" class="fecha" placeholder="Documento Cliente" value="<%=Datos.fechanaccli%>">
+                </td>
+                <td>
+                <span class="action_btn"> <a href="#">ACTUALIZAR</a> </span> 
+              </td>
+              <td>
+                <span class="action_btn2"> <a href="#">ELIMINAR</a></span>
+              </td>
+              <td>
+                <span class="action_btn3"> <a href="/lineascli/<%=Datos.doccli%>"></a>Ver Lineas De Credito</a></span>
+              </td>
+            
+              <td>
+                <span class="action_btn4"> <a href="/creditocli/<%=Datos.doccli%>">Creditos</a></span>
+              </td>
+            </tr>
+            <%})%>
+           </tbody>
+
+        </table>
+      </div>
+    </div>
+
+    
+
+
+  <script>
+   let btn = document.querySelector("#btn");
+   let sidebar = document.querySelector(".sidebar");
+   let searchBtn = document.querySelector(".bx-search");
+
+   btn.onclick = function() {
+     sidebar.classList.toggle("active");
+     if(btn.classList.contains("bx-menu")){
+       btn.classList.replace("bx-menu" , "bx-menu-alt-right");
+     }else{
+       btn.classList.replace("bx-menu-alt-right", "bx-menu");
+     }
+   }
+   searchBtn.onclick = function() {
+     sidebar.classList.toggle("active");
+   }
+  </script>
+
+</body>
+</html>

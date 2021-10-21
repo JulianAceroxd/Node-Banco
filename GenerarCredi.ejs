@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<!-- Created By CodingLab - www.codinglabweb.com -->
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+    <!--<title> Responsive Sidebar Menu  | CodingLab </title>-->
+
+    <script src="./js/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="./Css/style.css">
+    <link rel="stylesheet" href="./Css/archivo.css">
+    <link rel="shortcut icon" type="image/ico" href="Img/Favi.ico"/>
+    <script src="./js/borrarcli.js"></script>
+  <script src="./js/actualizarcli.js"></script>
+    <!-- Boxicons CDN Link -->
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  </head>
+  <TItle>Empleado</TItle>
+<body>
+  <div class="sidebar">
+    <div class="logo_content">
+      <div class="logo">
+        <i class=''> <img src="./Css/la-red.png" alt="" height="50px" width="50px"></i>
+        <div class="logo_name"></div>
+      </div>
+      <div>
+        
+      </div>
+      <i class='bx bx-menu' id="btn" ></i>
+    </div>
+    <ul class="nav_list">
+      <li>
+          <i class='bx bx-search' ></i>
+          <input type="text" placeholder="Search...">
+        <span class="tooltip">Search</span>
+      </li>
+      <li>
+        <a href="/Empleado">
+          <i class='bx bx-grid-alt' ></i>
+          <span class="links_name">Inicio</span>
+        </a>
+        <span class="tooltip">Inicio</span>
+      </li>
+      <li>
+        <a href="/TbCliente">
+          <i class='bx bx-user' ></i>
+          <span class="links_name">Clientes</span>
+        </a>
+        <span class="tooltip">Clientes</span>
+      </li>
+      <li>
+        <a href="/GenerarLi">
+          <i class='bx bx-chat' ></i>
+          <span class="links_name">Generar Lineas
+            </span>
+        </a>
+        <span class="tooltip">Gnerar Lineas/span>
+        <li>
+          <a href="/GenerarCre">
+            <i class='bx bx-chat' ></i>
+            <span class="links_name">Generar Creditos</span>
+          </a>
+          <a href="/GenerarAhorro">
+            <i class='bx bx-chat' ></i>
+            <span class="links_name">Generar C. Ahorros
+
+            </span>
+          </a>
+          <span class="tooltip">Cuentas De Ahorro</span>
+          <a href="">
+            <i class='bx bx-chat' ></i>
+            <span class="links_name">Generar C. Corriente
+
+            </span>
+          </a>
+          <span class="tooltip">Cuentas Corriente</span>
+        </li>
+        
+    
+    <div class="profile_content">
+      <div class="profile">
+        <div class="profile_details">
+          <img src="profile.jpg" alt="">
+          <div class="name_job">
+            <div class="name">Prem Shahi</div>
+            <div class="job">Web Designer</div>
+          </div>
+        </div>
+        <i class='bx bx-log-out' id="log_out"> <a href="cerrar">Cerrar Sesion</a></i>
+      </div>
+    </div>
+  </div>
+  <div class="home_content">
+   
+        <section class="form-register">
+            <h4>Formulario Registro Credito.</h4>
+            <form action="/frminsertarCre" method="POST" autocomplete="off">
+            <input class="controls" type="text" name="credito" id="Documento" placeholder="Ingrese Codigo Del Credito">
+            <input class="controls" type="text" name="doc" id="Usuario" placeholder="Ingrese Documento Del Cliente">
+            <input class="controls" type="text" name="monto" id="Apellido" placeholder="Ingrese Monto Prestado">
+            <input class="controls" type="text" name="codi" id="Correo" placeholder="Ingrese El Codigo De La Linea">
+            <input  placeholder="Ingrese La Fecha De Aprobacion">
+            <input class="controls" type="date" name="Fecha" id="Correo" placeholder="Ingrese La Fecha De Aprobacion">
+            <input class="controls" type="text" name="Plazo" id="Correo" placeholder="Ingrese El Plazo">
+            <input class="botons" type="submit" value="Registrar">
+          </form>
+          </section>
+    </div>
+  <script>
+    let btn = document.querySelector("#btn");
+    let sidebar = document.querySelector(".sidebar");
+    let searchBtn = document.querySelector(".bx-search");
+ 
+    btn.onclick = function() {
+      sidebar.classList.toggle("active");
+      if(btn.classList.contains("bx-menu")){
+        btn.classList.replace("bx-menu" , "bx-menu-alt-right");
+      }else{
+        btn.classList.replace("bx-menu-alt-right", "bx-menu");
+      }
+    }
+    searchBtn.onclick = function() {
+      sidebar.classList.toggle("active");
+    }
+   </script>
+  </body>
+  </html>

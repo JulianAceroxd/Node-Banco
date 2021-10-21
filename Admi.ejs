@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<!-- Created By CodingLab - www.codinglabweb.com -->
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+    <!--<title> Responsive Sidebar Menu  | CodingLab </title>-->
+
+    <script src="./js/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    <link rel="stylesheet" href="./Css/style.css">
+    <link rel="stylesheet" href="./Css/archivo.css">
+    <link rel="shortcut icon" type="image/ico" href="Img/Favi.ico"/>
+    <!-- Boxicons CDN Link -->
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+    
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <TItle>Administrador</TItle>
+   </head>
+<body>
+  <div class="sidebar">
+    <div class="logo_content">
+      <div class="logo">
+        <i class=''> <img src="./Css/la-red.png" alt="" height="50px" width="50px"></i>
+        <div class="logo_name"><%= nomusu %></div>
+      </div>
+      <div>
+        
+      </div>
+      <i class='bx bx-menu' id="btn" ></i>
+    </div>
+    <ul class="nav_list">
+      <li>
+          <i class='bx bx-search' ></i>
+          <input type="text" placeholder="Search...">
+        <span class="tooltip">Search</span>
+      </li>
+      <li>
+        <a href="#">
+          <i class='bx bx-grid-alt' ></i>
+          <span class="links_name">Inicio</span>
+        </a>
+        <span class="tooltip">Inicio</span>
+      </li>
+      <li>
+        <a href="/TbUsu">
+          <i class='bx bx-user' ></i>
+          <span class="links_name">Usuarios Administradores</span>
+        </a>
+        <span class="tooltip">Usuarios Administradores</span>
+      </li>
+    </ul>
+    <div class="profile_content">
+      <div class="profile">
+        <div class="profile_details">
+          <img src="profile.jpg" alt="">
+          <div class="name_job">
+            <div class="name">Prem Shahi</div>
+            <div class="job">Web Designer</div>
+          </div>
+        </div>
+        <i class='bx bx-log-out' id="log_out"> <a href="cerrar">Cerrar Sesion</a></i>
+      </div>
+    </div>
+  </div>
+  <div class="home_content">
+    <div class="text">Bienvenida Administradora <%= nomusu %></div>
+    
+    <div class="slider">
+      <ul>
+          <li>
+              <img src="./Img/logo2.jpg">
+          </li>
+          <li>
+              <img src="./Img/jovenes.jpg">
+          </li>
+          <li>
+              <img src="./Img/BANCO.jpg">
+          </li>
+          <li>
+              <img src="./Img/ETD.jpg">
+          </li>
+      </ul>
+  </div>
+  </div>
+
+  <% if (typeof alert != "undefined")  { %>
+    <script>
+    Swal.fire({
+      title:'<%= alertTitle %>',
+      text:'<%= alertMessage %>',
+      icon:'<%= alertIcon %>',
+      showConfirmButton:' <%= showConfirmButton %>',
+      timer: <%= timer %>
+ }).then(()=>{
+      window.location='/<%= ruta %>'
+    })
+    </script>
+  <% } %>
+
+
+  <script>
+   let btn = document.querySelector("#btn");
+   let sidebar = document.querySelector(".sidebar");
+   let searchBtn = document.querySelector(".bx-search");
+
+   btn.onclick = function() {
+     sidebar.classList.toggle("active");
+     if(btn.classList.contains("bx-menu")){
+       btn.classList.replace("bx-menu" , "bx-menu-alt-right");
+     }else{
+       btn.classList.replace("bx-menu-alt-right", "bx-menu");
+     }
+   }
+   searchBtn.onclick = function() {
+     sidebar.classList.toggle("active");
+   }
+  </script>
+
+</body>
+</html>
